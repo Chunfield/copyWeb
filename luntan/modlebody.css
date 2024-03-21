@@ -1,0 +1,16 @@
+.modlebody{
+    width: 1320px;
+    display: flex;
+    
+}
+.bottm-body{
+    display: flex;
+}
+.bottom-head{
+    display: flex;
+    justify-content: flex-end;
+}
+.bottom-footer{
+    display: flex;
+}
+

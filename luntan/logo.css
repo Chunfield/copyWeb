@@ -1,0 +1,15 @@
+.logo{
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    overflow: clip;
+}
+.logotext{
+    font-size: x-large;
+    color: rgb(255, 127, 80);
+    text-decoration: none;
+}

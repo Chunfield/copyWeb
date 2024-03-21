@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    @font-face {
+                font-family: cIconfont;
+                src: url('https://pss.bdstatic.com/static/superman/font/iconfont-cdfecb8456.eot');
+                src: url('https://pss.bdstatic.com/static/superman/font/iconfont-cdfecb8456.eot?#iefix') format('embedded-opentype'),url('https://pss.bdstatic.com/static/superman/font/iconfont-fa013548a9.woff2') format('woff2'),url('https://pss.bdstatic.com/static/superman/font/iconfont-840387fb42.woff') format('woff'),url('https://pss.bdstatic.com/static/superman/font/iconfont-4530e108b6.ttf') format('truetype'),url('https://pss.bdstatic.com/static/superman/font/iconfont-74fcdd51ab.svg#iconfont') format('svg')
+            }
+    .baidu{
+        display: flex;
+        flex-direction:column;
+        height: 100vh;
+    }
+    .header{
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .zuodaohang{
+        height: 60px;
+        display: flex;
+    }
+    .daohangchild{
+        margin-left: 24px;
+        margin-top: 19px;
+        font: 13px/23px Arial,sans-serif;
+    }
+    .youdaohang{
+        height: 60px;
+        padding-right: 24px;
+        padding-left: 200px;
+        display: flex;
+        position: relative;
+    }
+    .you{
+        transform: translateY(-1px);
+    }
+    .youchild1{
+        margin-left: 24px;
+        margin-top: 19px;
+        position: relative;
+        vertical-align: top;
+        cursor: pointer;
+        color: #222;
+        font: 13px/23px Arial,sans-serif;
+    }
+    .youchild2{
+        display: inline-block;
+        margin-top: 18px;
+        margin-left: 32px;
+        font-size: 13px;
+
+        height: 24px;
+        width: 48px;
+        line-height: 24px;
+
+        background-color: #4e6ef2;
+        color: #fff!important;
+        font-family: inherit;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        outline: 0;
+        border: 0;
+        border-radius: 6px;
+        padding: 0;
+    }
+    .ai{
+        margin-right: -8px;
+        margin-top: 18px;
+        width: 24px;
+        height: 24px;
+        right: 170px;
+        position: absolute;
+    }
+    .aichild{
+        height: 24px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .tupian{
+        display: flex;
+        justify-content: center;
+       
+        transform:translateY(-15px);
+    }
+    .sousuo{
+        display:flex;
+        justify-content: center;
+    }
+    .sousuolan{
+        display: flex;
+
+    }
+    .anniu{
+       transform: translateX(-1.5px);
+    }
+    .submit{
+        cursor: pointer;
+    width: 108px;
+    height: 44px;
+    line-height: 45px;
+    padding: 0;
+    background: 0 0;
+    background-color: #4e6ef2;
+    border-radius: 0 10px 10px 0;
+    font-size: 17px;
+    color: #fff;
+    box-shadow: none;
+    font-weight: 400;
+    border: none;
+    outline: 0;
+    text-align: center;
+    }
+    .shuru{
+        width: 443px;
+    height: 16px;
+    padding: 12px 16px;
+    padding-right: 87px;
+    font-size: 16px;
+    margin: 0;
+    vertical-align: top;
+    outline: 0;
+    box-shadow: none;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid #c4c7ce;
+    background: #fff;
+    color: #222;
+    overflow: hidden;
+    box-sizing: content-box;
+    transform: translateX(1.5px);
+    -webkit-tap-highlight-color: transparent;
+    }
+    .resou{
+        display: flex;
+        justify-content: center;
+    }
+    .resoulan{
+        margin-top: 45px;
+        height:24px;
+        width: 654px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .cicon{
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    color: #222;
+    font: 14px/24px Arial,sans-serif;
+    font-family: cIconfont;
+    }
+    .arrow{
+        color: #9195a3;
+        font-size: 15px;
+        font-family: cIconfont!important;
+        font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    }
+    .huanyihuan{
+        font-size: 14px;
+    line-height: 14px;
+    color: #626675;
+    margin-left: 2px;
+    }
+    .reicon{
+        font-size: 16px;
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        color: #626675;
+
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+
+        font-family: cIconfont!important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+
+        transform: translateX(5px);
+    }
+  
+    .hotsearch{
+        display: flex;
+        justify-content: center;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        width: 306px;
+        margin-right: 20px;
+        line-height: 36px;
+        
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        width: 306px;
+        line-height: 36px;
+    }
+    .hoticon{
+        transform: rotate(180deg);
+        height: 18px;
+        width: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 18px;
+        position: relative;
+        top: -2px;
+        left: -3px;
+        font-size: 18px;
+        color: #f63051;
+        margin-right: 8px;
+
+        font-family: cIconfont!important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+
+        
+    }
+    .span{
+        font-size: 16px;
+        
+    }
+    .num{
+        margin-right: 4px;
+        width: 22px;
+        font-family: Arial,sans-serif;
+        font-size: 18px;
+        line-height: 18px;
+        position: relative;
+        top: 1px;
+        display: inline-block;
+    }
+    .n1{
+        color: #fe2d46;
+    }
+    .n2{
+        color: #f60;
+    }
+    .n3{
+        color: #faa90e;
+    }
+    .n4{
+        color: #9195a3;
+    }
+    .n5{
+        color: #9195a3;
+    }
+    .re{
+        margin-left: 6px;
+        position: relative;
+        top: -2px;
+        background-color: #f60;
+
+        display: inline-block;
+        padding: 0 2px;
+        text-align: center;
+        vertical-align: middle;
+        font-style: normal;
+        color: #fff;
+        overflow: hidden;
+        line-height: 16px;
+        height: 16px;
+        font-size: 12px;
+        border-radius: 4px;
+        font-weight: 200;
+    }
+    
+    .footer{
+        height: 39px;
+        display: flex;
+        align-items: flex-end;
+        margin: 0;
+        line-height: 39px;
+        width: 100%;
+    }
+    .footerchild{
+        margin: 0 17px;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .f1{ 
+        height: 100%;
+        margin-left: 14px;
+        color: #bbb;
+        font-size: 12px;
+        font-family: Arial,sans-serif;
+    }
+    .f2{
+        margin-left: 15px;
+        margin-right: 9px;
+        width: 20px;
+        height: 39px;
+        overflow: hidden;
+    }
+    .ficon{
+        font-size: 14px;
+        color: #aaa;
+        font-family: cIconfont!important;
+        /* font-style: normal; */
+        /* -webkit-font-smoothing: antialiased; */
+    }
+    .f3{
+        width: 20px;
+        height: 39px;
+        overflow: hidden;
+    }
+    .ficon1{
+        font-family: cIconfont!important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    font-size: 14px;
+    color: #9195a3;
+    }
+    .paizhao{
+        
+        background: #fff url(https://pss.bdstatic.com/static/superman/img/searchbox/nicon-10750f3f7d.png) no-repeat;
+        background-position: 0 -51px;
+        width: 24px;
+        height: 20px;
+
+        right: 16px;
+        margin-top: -9px;
+        position: absolute;
+        top: 48%;
+        transform: translateX(-1.5px);
+        
+    }
+    .shitu{
+        position: relative;
+    }
+</style>
+<body>
+    <div class="baidu">
+        <div class="header">
+            <div class="zuodaohang">
+                <div class="daohangchild">新闻</div>
+                <div class="daohangchild">hao123</div>
+                <div class="daohangchild">地图</div>
+                <div class="daohangchild">贴吧</div>
+                <div class="daohangchild">视频</div>
+                <div class="daohangchild">图片</div>
+                <div class="daohangchild">网盘</div>
+                <div class="daohangchild">更多</div>
+            </div>
+            <div class="youdaohang">
+                <div class="ai">
+                    <img class="aichild" src="xiazai.png">
+                </div>
+                <span class="youchild1">设置</span>
+                <a class="youchild2">登录</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tupian">
+                <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" width="270" height="129">
+            </div>
+            <div class="sousuo">
+                <div class="sousuolan">
+                    <span class="shitu">
+                        <input class="shuru" value maxlength="255">
+                        <span class="paizhao"></span>
+                    </span>
+                </div><div class="anniu">
+                    <input class="submit" value="百度一下">
+                </div>
+            </div>
+            <div class="resou">
+                <div class="resoulan">
+                    <div class="zuo">
+                        <i class="cicon"></i><i class="arrow"></i>
+                    </div>
+                    <div class="you">
+                        <i class="reicon"></i>
+                        <span class="huanyihuan">换一换</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hotsearch">
+               <div class="left">
+                    <div class="leftchild1">
+                        <i class="hoticon"></i>
+                        <span>习近平在黑龙江考察</span>
+                    </div>
+                    <div class="leftchild1">
+                        <span class="num n1">1</span>
+                        <span>摩洛哥强震已致超600人死亡</span>
+                        <span class="re">热</span>
+                    </div>
+                    <div class="leftchild2">
+                        <span class="num n2">2</span> 
+                        <span>莫迪身前桌签上国名是“婆罗多”</span>
+                        <span class="re">热</span>
+                    </div>
+               </div>
+               <div class="right">
+                    <div class="rightchild1">
+                        <span class="num n3">3</span>
+                        <span>亚运会总赛程3.0版发布</span>
+                    </div>
+                    <div class="rightchild2">
+                        <span class="num n4">4</span>
+                        <span>PPT之父去世</span>
+                    </div>
+                    <div class="rightchild3">
+                        <span class="num n5">5</span>
+                        <span>外卖小哥爬泰山送外卖跑腿费500元</span>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerchild">
+                <div class="f1">关于百度</div>
+                <div class="f1">About Baidu</div>
+                <div class="f1">使用百度前必读</div>
+                <div class="f1">帮助中心</div>
+                <div class="f1">企业推广</div>
+                <div class="f1">京公网安备11000002000001号</div>
+                <div class="f1">京ICP证030173号</div>
+                <div class="f1">互联网新闻信息服务许可证11220180008</div>
+                <div class="f1">网络文化经营许可证： 京网文〔2023〕1034-029号</div>
+                <div class="f1">信息网络传播视听节目许可证 0110516</div>
+                <div class="f2"><span class="ficon"></span></div>
+                <div class="f3">
+                    <span class="ficon1"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

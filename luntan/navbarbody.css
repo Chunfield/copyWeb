@@ -1,0 +1,22 @@
+.navbarbody{
+    display:flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.navbarbody-child{
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    margin-bottom: -1px;
+    padding: 8px 16px 8px 16px;
+    
+}
+.shequ{
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+.fit{
+    display: flex;
+    flex: 1;
+}
